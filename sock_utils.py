@@ -12,9 +12,12 @@ def create_tcp_client_socket(address, port):
 def receive_all(socket: s.socket, length: int) -> bytearray | None:
     data = bytearray()
     try:
-        for _ in range(length):
-            packet = socket.recv(1)
+        while len(data) < length:
+            packet = socket.recv(length - len(data))
+            if len(packet) == 0:
+                break
             data.extend(packet)
+
         return data
     except:
         return None
