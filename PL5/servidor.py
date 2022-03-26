@@ -92,10 +92,10 @@ def main():
     HTTP_server.allow_reuse_address = True
 
     try:
-        HTTP_server.serve_forever()
+        HTTP_server.serve_forever(2.0)
     except KeyboardInterrupt:
         pass
-    HTTP_server.server_close()
+    HTTP_server.shutdown()
 
 if __name__ == '__main__':
     main()

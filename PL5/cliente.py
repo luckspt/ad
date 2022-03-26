@@ -37,3 +37,4 @@ while True:
         res = con.getresponse()
 
         print(f'{res.status}, {res.reason}\n{res.read().decode()}\n')
+        con.close()
