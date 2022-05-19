@@ -1,4 +1,4 @@
-from flask import Flask, request, make_response, abort
+from flask import Flask, request, make_response
 import sqlite3
 
 app = Flask(__name__)
